@@ -1,0 +1,51 @@
+version: "3"
+
+services:
+  web_server:
+    restart: unless-stopped
+    container_name: web_server
+    platform: linux/amd64
+    image: staticfloat/nginx-certbot
+    ports:
+      - 80:80/tcp
+      - 443:443/tcp
+    environment:
+      CERTBOT_EMAIL: ${CERTBOT_EMAIL}
+      ENVSUBST_VARS: FQDN
+      FQDN: ${SERVER_NAME}
+    volumes:
+      - ./app/web_server/conf.d:/etc/nginx/user.conf.d:ro
+      - letsencrypt:/etc/letsencrypt
+    links:
+      - strapi:strapi
+
+  strapi:
+    image: strapi/strapi
+    container_name: strapi
+    platform: linux/amd64
+    env_file: .env
+    environment:
+      DATABASE_CLIENT: ${DATABASE_CLIENT}
+      PUBLIC_URL: ${PUBLIC_URL}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_HOST: ${DATABASE_HOST}
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+    volumes:
+      - ./app/strapi:/srv/app
+    links:
+      - postgres:postgres
+
+  postgres:
+    image: postgres
+    container_name: database
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    volumes:
+      - ./app/database:/var/lib/postgresql/data
+
+volumes:
+  letsencrypt:
