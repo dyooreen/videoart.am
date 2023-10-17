@@ -6,4 +6,5 @@ module.exports = ({ env }) => ({
       secret: env('ADMIN_JWT_SECRET', '51d3dbb8e0b7921b72c6e4922dc29e7c'),
     },
   },
+  url:"https://videoart.am/api"
 });

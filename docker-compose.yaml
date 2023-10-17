@@ -4,7 +4,6 @@ services:
   web_server:
     restart: unless-stopped
     container_name: web_server
-    platform: linux/amd64
     image: staticfloat/nginx-certbot
     ports:
       - 80:80/tcp
@@ -21,8 +20,8 @@ services:
 
   strapi:
     image: strapi/strapi
+    restart: always
     container_name: strapi
-    platform: linux/amd64
     env_file: .env
     environment:
       DATABASE_CLIENT: ${DATABASE_CLIENT}
@@ -39,12 +38,13 @@ services:
 
   postgres:
     image: postgres
+    restart: always
     container_name: database
     environment:
       POSTGRES_DB: ${DATABASE_NAME}
       POSTGRES_USER: ${DATABASE_USERNAME}
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
-    volumes:
+    volumes: 
       - ./app/database:/var/lib/postgresql/data
 
 volumes:

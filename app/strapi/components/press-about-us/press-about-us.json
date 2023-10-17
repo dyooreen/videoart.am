@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_press_about_us_press_aboutuses",
+  "info": {
+    "name": "PressAboutUs",
+    "icon": "pen-nib"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
