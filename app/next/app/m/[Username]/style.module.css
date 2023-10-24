@@ -1,0 +1,23 @@
+.member {
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  padding: 2vw;
+  width: 70vw;
+  margin: auto;
+}
+.member img {
+  border-radius: 2vw;
+}
+.member > div:nth-child(2) > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.member > div:nth-child(2) > div:first-child > div:first-child {
+  display: flex;
+  align-items: center;
+}
+.member > div:nth-child(2) > div:first-child span {
+  margin: 0vw 1vw;
+}

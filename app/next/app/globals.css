@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap");
+* {
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  color: black;
+  min-height: 100vh;
+  font-family: "Tilt Neon" !important;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0px;
+}
+.container {
+  position: relative;
+  top: 8vw;
+  min-height: calc(100vh - 8vw);
+  overflow: hidden;
+}

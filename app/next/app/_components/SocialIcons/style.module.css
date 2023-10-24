@@ -1,0 +1,8 @@
+.SocialLinks {
+  display: flex;
+  align-items: center;
+}
+
+.SocialLinks > a {
+  margin-left: 1vw;
+}
