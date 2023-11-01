@@ -1,0 +1,19 @@
+import "./globals.css";
+import Header from "../_components/Header";
+import Footer from "../_components/Footer";
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang={"en"}>
+      <body>
+        <Header />
+        <div className="m-auto mt-28">{children}</div>
+        <Footer />
+      </body>
+    </html>
+  );
+}

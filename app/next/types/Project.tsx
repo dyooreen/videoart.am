@@ -1,4 +1,5 @@
-export type Project = {
+export type TProject = {
+  i: number;
   id: number;
   Name: string;
   Youtube: string;
@@ -12,5 +13,6 @@ export type Project = {
   members: Array<any>;
   awards: Array<any>;
   partners: Array<any>;
+  Photo: any;
   localizations: Array<any>;
 };
