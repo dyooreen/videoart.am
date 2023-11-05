@@ -1,4 +1,5 @@
 "use client";
+import fullPath from "@/lib/host";
 import { TProject } from "@/types/Project";
 import Image from "next/image";
 
@@ -24,7 +25,7 @@ export default function Project({
       </div>
       <div className="relative w-2/3  h-full">
         <Image
-          src={"https://videoart.am/api" + Photo.url}
+          src={fullPath(Photo.url)}
           fill
           style={{ objectFit: "cover" }}
           alt={Name}

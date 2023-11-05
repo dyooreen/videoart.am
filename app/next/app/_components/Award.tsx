@@ -1,3 +1,4 @@
+import fullPath from "@/lib/host";
 import Image from "next/image";
 
 export default function Award({ Name, Description, Photo, i, projects }: any) {
@@ -14,7 +15,7 @@ export default function Award({ Name, Description, Photo, i, projects }: any) {
           <p className="text-lg overflow-auto h-full">{Description}</p>
           <br></br>
           <div>
-            {projects.map((p: any,i:number) => (
+            {projects.map((p: any, i: number) => (
               <div key={i}>#{p.Name}</div>
             ))}
           </div>
@@ -22,7 +23,7 @@ export default function Award({ Name, Description, Photo, i, projects }: any) {
       </div>
       <div className="relative w-2/3  h-full">
         <Image
-          src={"https://videoart.am/api" + Photo.url}
+          src={fullPath(Photo.url)}
           fill
           style={{ objectFit: "cover" }}
           alt={Name}

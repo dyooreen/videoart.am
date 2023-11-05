@@ -12,6 +12,9 @@ const nextConfig = {
     remotePatterns: [
       {
         hostname: "videoart.am",
+        protocol: 'https',
+        port: '',
+        pathname: '/api/**',
       },
     ],
   },

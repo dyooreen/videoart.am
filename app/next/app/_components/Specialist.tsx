@@ -1,3 +1,4 @@
+import fullPath from "@/lib/host";
 import Image from "next/image";
 
 export default function Specialist({ Name, Photo }: any) {
@@ -7,7 +8,7 @@ export default function Specialist({ Name, Photo }: any) {
         <Image
           fill
           style={{ objectFit: "cover" }}
-          src={"https://videoart.am/api" + Photo.url}
+          src={fullPath(Photo.url)}
           alt={Name}
         />
       </div>

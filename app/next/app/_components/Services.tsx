@@ -1,10 +1,11 @@
 "use client";
+import fullPath from "@/lib/host";
 import Image from "next/image";
 
 export default function Services({ data }: any) {
   const { BackgroundPhoto, Headline, ShortText, Service } = data;
   return (
-    <section className="w-screen h-[calc(100vh-7rem)]  items-center relative  overflow-hidden">
+    <section className="w-screen min-h-[calc(100vh-7rem)]  items-center relative  overflow-hidden">
       {Headline && (
         <div className=" text-black py-20 ">
           <h3 className="text-3xl text-center ">{Headline}</h3>
@@ -24,7 +25,7 @@ export default function Services({ data }: any) {
           </div>
         </div>
         <Image
-          src={"https://videoart.am/api" + BackgroundPhoto.url}
+          src={fullPath(BackgroundPhoto.url)}
           alt={Headline}
           fill
           priority

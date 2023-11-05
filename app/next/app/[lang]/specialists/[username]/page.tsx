@@ -4,6 +4,7 @@ import Image from "next/image";
 import SocialIcons from "@/app/_components/SocialIcons";
 import CvIcon from "@/app/_components/Icons/Cv";
 import Project from "@/app/_components/Project";
+import fullPath from "@/lib/host";
 
 type Props = {
   params: {
@@ -12,6 +13,7 @@ type Props = {
 };
 export default async function Member({ params }: Props) {
   if (!params.username) return;
+  console.log(params.username);
   const username = params.username.split("%40")[1];
   const { Name, Photo, CV, SocialLinks, projects, Bio }: Member = (
     await flow(`/members?_Username=${username}`)
@@ -22,7 +24,7 @@ export default async function Member({ params }: Props) {
       <div>
         <div>
           <Image
-            src={"https://videoart.am/api" + Photo.url}
+            src={fullPath(Photo.url)}
             fill
             style={{
               width: "100%",

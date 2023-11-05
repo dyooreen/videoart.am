@@ -3,6 +3,7 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Image from "next/image";
+import fullPath from "@/lib/host";
 
 const responsive = {
   superLargeDesktop: {
@@ -36,7 +37,7 @@ export default function PartnerCarousel({ Partners }: any) {
           <div className="relative h-full w-3/5 m-auto" key={i}>
             <Image
               alt={Name}
-              src={"https://videoart.am/api" + Logo.url}
+              src={fullPath(Logo.url)}
               fill
               style={{
                 objectFit: "contain",

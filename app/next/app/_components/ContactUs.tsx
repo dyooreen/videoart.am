@@ -1,8 +1,8 @@
 "use client";
 
+import fullPath from "@/lib/host";
 import Image from "next/image";
 
-const position: any = [51.505, -0.09];
 export default function ContactUs({ data }: any) {
   const { Headline, Mail, Phone, Location } = data;
   return (
@@ -19,13 +19,13 @@ export default function ContactUs({ data }: any) {
           <br></br>
           {Phone && (
             <div>
-             <span className="font-extrabold">PHONE</span>  <div>{Phone}</div>
+              <span className="font-extrabold">PHONE</span> <div>{Phone}</div>
             </div>
           )}
         </div>
         <div className="w-1/2 overflow-hidden h-full border-2 relative ">
           <Image
-            src={"https://videoart.am/api" + Location?.Map?.url}
+            src={fullPath(Location?.Map?.url)}
             fill
             alt={Headline}
             style={{ objectFit: "cover" }}

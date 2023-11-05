@@ -1,6 +1,7 @@
 "use client";
 import go from "@/lib/getLang";
 import getLang from "@/lib/getLang";
+import fullPath from "@/lib/host";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -22,7 +23,7 @@ export default function Headline({
   return (
     <section className="w-screen h-[calc(100vh-7rem)] flex items-center relative">
       <Image
-        src={"https://videoart.am/api" + Wallpaper.url}
+        src={fullPath(Wallpaper.url)}
         alt={Headline}
         fill
         priority
