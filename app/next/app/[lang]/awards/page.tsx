@@ -1,8 +1,9 @@
 import Award from "@/app/_components/Award";
+import fullPath from "@/lib/host";
 
 export default async function Awards({ params: { lang } }: any) {
   const awards = await (
-    await fetch("https://videoart.am/api/awards?_locale=" + lang)
+    await fetch(fullPath("/awards?_locale=" + lang))
   ).json();
   return (
     <div>

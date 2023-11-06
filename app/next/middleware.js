@@ -4,10 +4,16 @@ function getLocale(langs) {
     .filter((lang) => lang.isDefault == true)
     .map((lang) => lang.code);
 }
-
+const fullPath = (p) => {
+  const host =
+    process.env.STAGE == "production"
+      ? "http:strapi:1337"
+      : "https://videoart.am/api";
+  return host + p;
+};
 export async function middleware(request) {
   let data = await (
-    await fetch(`https://videoart.am/api/i18n/locales`, {
+    await fetch(fullPath(`i18n/locales`), {
       cache: "force-cache",
     })
   ).json();

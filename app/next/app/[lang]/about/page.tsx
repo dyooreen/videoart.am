@@ -1,8 +1,9 @@
 import Specialist from "@/app/_components/Specialist";
+import fullPath from "@/lib/host";
 
 export default async function About({ params: { lang } }: any) {
   const members = await (
-    await fetch("https://videoart.am/api/members?_locale=" + lang)
+    await fetch(fullPath("https://videoart.am/api/members?_locale=" + lang))
   ).json();
   console.log(members);
   return (
