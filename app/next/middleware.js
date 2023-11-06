@@ -13,7 +13,7 @@ const fullPath = (p) => {
 };
 export async function middleware(request) {
   let data = await (
-    await fetch(fullPath(`i18n/locales`), {
+    await fetch(fullPath(`/i18n/locales`), {
       cache: "force-cache",
     })
   ).json();
