@@ -7,7 +7,7 @@ function getLocale(langs) {
 const fullPath = (p) => {
   const host =
     process.env.STAGE == "production"
-      ? "http:strapi:1337"
+      ? "http://strapi:1337"
       : "https://videoart.am/api";
   return host + p;
 };
