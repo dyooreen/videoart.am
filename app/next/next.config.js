@@ -13,6 +13,9 @@ const nextConfig = {
       {
         hostname: "videoart.am",
       },
+      {
+        hostname: "strapi",
+      }
     ],
   },
 };
