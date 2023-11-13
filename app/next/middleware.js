@@ -1,5 +1,6 @@
 // Get the preferred locale, similar to the above or using a library
 function getLocale(langs) {
+  return "hy"
   return langs
     .filter((lang) => lang.isDefault == true)
     .map((lang) => lang.code);
@@ -12,12 +13,12 @@ const fullPath = (p) => {
   return host + p;
 };
 export async function middleware(request) {
-  let data = await (
-    await fetch(fullPath(`/i18n/locales`), {
-      cache: "force-cache",
-    })
-  ).json();
-  let locales = data.map((i) => i.code);
+  // let data = await (
+  //   await fetch(fullPath(`/i18n/locales`), {
+  //     cache: "force-cache",
+  //   })
+  // ).json();
+  let locales = ["en","hy"]
 
   // Check if there is any supported locale in the pathname
   const { pathname } = request.nextUrl;
