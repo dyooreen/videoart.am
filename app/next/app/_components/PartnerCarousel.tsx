@@ -37,7 +37,7 @@ export default function PartnerCarousel({ Partners }: any) {
           <div className="relative h-full w-3/5 m-auto" key={i}>
             <Image
               alt={Name}
-              src={fullPath(Logo.url, true, false)}
+              src={fullPath(Logo.url, true)}
               fill
               style={{
                 objectFit: "contain",

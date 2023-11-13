@@ -1,3 +1,4 @@
+"use client"
 import fullPath from "@/lib/host";
 import Image from "next/image";
 
@@ -23,7 +24,7 @@ export default function Award({ Name, Description, Photo, i, projects }: any) {
       </div>
       <div className="relative w-2/3  h-full">
         <Image
-          src={fullPath(Photo.url)}
+          src={fullPath(Photo.url,true)}
           fill
           style={{ objectFit: "cover" }}
           alt={Name}
