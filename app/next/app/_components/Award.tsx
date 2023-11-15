@@ -24,7 +24,7 @@ export default function Award({ Name, Description, Photo, i, projects }: any) {
       </div>
       <div className="relative w-2/3  h-full">
         <Image
-          src={fullPath(Photo.url,true)}
+          src={fullPath(Photo.url,true,true)}
           fill
           style={{ objectFit: "cover" }}
           alt={Name}

@@ -4,6 +4,7 @@ import Image from "next/image";
 
 export default function Services({ data }: any) {
   const { BackgroundPhoto, Headline, ShortText, Service } = data;
+  console.log(BackgroundPhoto)
   return (
     <section className="w-screen min-h-[calc(100vh-7rem)]  items-center relative  overflow-hidden">
       {Headline && (
@@ -25,7 +26,7 @@ export default function Services({ data }: any) {
           </div>
         </div>
         <Image
-          src={fullPath(BackgroundPhoto.url)}
+          src={fullPath(BackgroundPhoto.url,true,true)}
           alt={Headline}
           fill
           priority

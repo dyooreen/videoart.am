@@ -1,15 +1,13 @@
-import fullPath from "@/lib/host";
 import Headline from "../_components/Headline";
 import PartnerCarousel from "../_components/PartnerCarousel";
 import Reel from "../_components/Reel";
 import Services from "../_components/Services";
 export default async function Home({ params: { lang } }: any) {
   const home = await (
-    await fetch(fullPath(`/home?_locale=${lang}`), {
+    await fetch(`http://strapi:1337/home?_locale=${lang}`, {
       cache: "force-cache",
     })
   ).json();
-
   return (
     <div>
       {home["Headline"] && <Headline {...home["Headline"]} />}

@@ -24,7 +24,9 @@ services:
     working_dir: /srv/app
     volumes:
       - ./app/next:/srv/app
-    command: sh -c "npm run build && npm run start"
+    #command: sh -c "npm run build && npm run start"
+    command: sh -c "npm run dev"
+
     links:
       - strapi:strapi
   strapi:

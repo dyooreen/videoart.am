@@ -21,7 +21,7 @@ export default function Header() {
   useEffect(() => {
     flow(`/menus?_sort=Order&_locale=${prefix()}`).then((res) => setMenu(res));
     flow("/i18n/locales").then((data) => setLangs(data));
-  });
+  },[]);
 
   return (
     <div className="fixed left-0 right-0 top-0 bottom-0 z-10 h-fit">

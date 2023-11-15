@@ -23,7 +23,7 @@ export default function Headline({
   return (
     <section className="w-screen h-[calc(100vh-7rem)] flex items-center relative">
       <Image
-        src={fullPath(Wallpaper.url, true)}
+        src={fullPath(Wallpaper.url, true,true)}
         alt={Headline}
         fill
         priority

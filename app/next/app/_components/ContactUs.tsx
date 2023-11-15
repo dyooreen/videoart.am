@@ -25,7 +25,7 @@ export default function ContactUs({ data }: any) {
         </div>
         <div className="w-1/2 overflow-hidden h-full border-2 relative ">
           <Image
-            src={fullPath(Location?.Map?.url)}
+            src={fullPath(Location?.Map?.url,true,true)}
             fill
             alt={Headline}
             style={{ objectFit: "cover" }}

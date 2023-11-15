@@ -1,6 +1,6 @@
 // Get the preferred locale, similar to the above or using a library
-function getLocale(langs) {
-  return "hy"
+function getLocale() {
+  return "en"
   return langs
     .filter((lang) => lang.isDefault == true)
     .map((lang) => lang.code);
@@ -28,7 +28,7 @@ export async function middleware(request) {
 
   if (pathnameHasLocale) return;
 
-  const locale = getLocale(data);
+  const locale = getLocale();
   request.nextUrl.pathname = `/${locale}${pathname}`;
   return Response.redirect(request.nextUrl);
 }
